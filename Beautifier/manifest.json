@@ -1,0 +1,40 @@
+{
+	"extension": 
+	{
+		"name": "JavaScript Beautifier",
+		"version": "1.0.0",
+		"description": "Beautify you JavaScript",
+		"icon": "butterfly.png",
+		
+		"senders": [
+					{
+						"location": "codeEditorToolbar", 
+						"title": "Beautifier",
+						"icon": "butterfly.png",
+						"tips": "Butterfly is beautiful",
+						"menu": [
+							{"actionName": "beautify"},
+							{"actionName": "settings"},
+							{"actionName": "doAbout"}
+						]
+					}
+		],
+		
+		"actions": [
+					{
+						"name": "beautify",
+						"title": "Beautify"
+					},
+					{
+						"name": "settings",
+						"title": "Settings..."
+					},
+					{
+						"name": "doAbout",
+						"title": "About..."
+					}
+		],
+		
+		"lifetime": "application_lifetime"
+	}
+}

@@ -1,0 +1,163 @@
+{
+	"extension": 
+	{
+		"name": "Web Snippet",
+		"version": "1.0.0",
+		"description": "Snippet for HTML and Javascript",
+		"icon": "html.png",
+		"compatibleBuildVersion": 0,
+		
+		"senders": [
+					{
+						"location": "codeEditorToolbar", 
+						"icon": "form.png",
+						"actionName": "html_form"
+					},
+					{
+						"location": "codeEditorToolbar",
+						"icon": "div.png",
+						"actionName": "html_div"
+					},
+					{ 
+						"location": "codeEditorToolbar", 
+						"icon": "li.png",
+						"actionName": "html_li"
+					},
+					{
+						"location": "codeEditorToolbar", 
+						"icon": "br.png",
+						"actionName": "html_br"
+					},
+					{
+						"location": "codeEditorToolbar", 
+						"icon": "p.png",
+						"actionName": "html_p"
+					},
+					{
+						"location": "codeEditorToolbar", 
+						"icon": "func.png",
+						"actionName": "js_func"
+					},
+					{
+						"location": "codeEditorToolbar",
+						"icon": "if.png",
+						"actionName": "js_if"
+					},
+					{ 
+						"location": "codeEditorToolbar", 
+						"icon": "for.png",
+						"actionName": "js_for"
+					},
+					{
+						"location": "codeEditorToolbar", 
+						"icon": "switch.png",
+						"actionName": "js_switch"
+					},
+					{
+						"location": "codeEditorToolbar", 
+						"icon": "try.png",
+						"actionName": "js_try"
+					},
+					{
+						"location": "codeEditorToolbar", 
+						"icon": "comment.png",
+						"actionName": "js_comment"
+					},
+					{
+						"location": "codeEditorToolbar", 
+						"icon": "about.png",
+						"actionName": "about"
+					}
+		],
+		
+		"actions": [
+					{
+						"name": "html_form",
+						"title": "form",
+						"targets":	[
+							{ "uti": "public.html" }
+						]
+					},
+					{
+						"name": "html_div",
+						"title": "div",
+						"targets":	[
+							{ "uti": "public.html" }
+						]
+					},
+					{
+						"name": "html_li",
+						"title": "li",
+						"targets":	[
+							{ "uti": "public.html" }
+						]
+					},
+					{
+						"name": "html_br",
+						"title": "br",
+						"targets":	[
+							{ "uti": "public.html" }
+						]
+					},
+					{
+						"name": "html_p",
+						"title": "P",
+						"targets":	[
+							{ "uti": "public.html" }
+						]
+					},
+					
+					{
+						"name": "js_if",
+						"title": "if",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						]
+					},
+					{
+						"name": "js_for",
+						"title": "for",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						]
+					},
+					{
+						"name": "js_func",
+						"title": "function",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						]
+					},
+					{
+						"name": "js_switch",
+						"title": "switch",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						]
+					},
+					{
+						"name": "js_try",
+						"title": "try catch",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						]
+					},
+					{
+						"name": "js_comment",
+						"title": "comment",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						]
+					},
+					{
+						"name": "about",
+						"title": "About Snippet",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						]
+					}
+		],
+		
+		"lifetime": "application_lifetime"
+	}
+}

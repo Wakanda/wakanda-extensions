@@ -1,0 +1,213 @@
+{
+	"extension": 
+	{
+		"name": "Web Snippet",
+		"version": "1.0.0",
+		"description": "Snippet for HTML and Javascript",
+		"icon": "html.png",
+		"compatibleBuildVersion": 0,
+		
+		"senders": [
+					{
+						"location": "codeEditorToolbar", 
+						"icon": "html.png",
+						"menu": [
+							{"actionName": "html_form"},
+							{"actionName": "html_div"},
+							{"actionName": "html_ol"},
+							{"actionName": "html_ul"},
+							{"actionName": "html_br"},
+							{"actionName": "html_p"},
+							{"actionName": "html_comment"}
+						]
+					},
+					
+					{
+						"location": "codeEditorToolbar", 
+						"icon": "js.png",
+						"menu": [
+							{"actionName": "js_func"},
+							{"actionName": "js_if"},
+							{"actionName": "js_for"},
+							{"actionName": "js_switch"},
+							{"actionName": "js_try"},
+							{"actionName": "js_comment"}
+						]
+					}
+		],
+		
+		"actions": [
+					{
+						"name": "html_form",
+						"title": "<form>",
+						"targets":	[
+							{ "uti": "public.html" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "m"
+						}
+					},
+					{
+						"name": "html_div",
+						"title": "<div>",
+						"targets":	[
+							{ "uti": "public.html" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "d"
+						}
+					},
+					{
+						"name": "html_ol",
+						"title": "<ol>",
+						"targets":	[
+							{ "uti": "public.html" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "o"
+						}
+					},
+					{
+						"name": "html_ul",
+						"title": "<ul>",
+						"targets":	[
+							{ "uti": "public.html" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "u"
+						}
+					},
+					{
+						"name": "html_br",
+						"title": "<br/>",
+						"targets":	[
+							{ "uti": "public.html" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "b"
+						}
+					},
+					{
+						"name": "html_p",
+						"title": "<P>",
+						"targets":	[
+							{ "uti": "public.html" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "p"
+						}
+					},
+					{
+						"name": "html_comment",
+						"title": "<!- -->",
+						"targets":	[
+							{ "uti": "public.html" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "p"
+						}
+					},
+					{
+						"name": "js_if",
+						"title": "if-else",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "i"
+						}
+					},
+					{
+						"name": "js_for",
+						"title": "for loop",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "r"
+						}
+					},
+					{
+						"name": "js_func",
+						"title": "function",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "n"
+						}
+					},
+					{
+						"name": "js_switch",
+						"title": "switch",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "w"
+						}
+					},
+					{
+						"name": "js_try",
+						"title": "try-catch",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "t"
+						}
+					},
+					{
+						"name": "js_comment",
+						"title": "comment",
+						"targets":	[
+							{ "uti": "com.netscape.javascript-source" }
+						],
+						"shortcut": {
+							"shortcutKey" : "yes",
+							"alternateKey" : "yes",
+							"shiftKey" : "no",
+							"key" : "c"
+						}
+					}
+		],
+		
+		"lifetime": "action_lifetime"
+	}
+}
