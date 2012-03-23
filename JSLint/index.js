@@ -73,7 +73,7 @@ actions.checkError = function checkError() {
 		if (JSLintErrors !== 0) {
 			studio.alert("There are " + JSLINT.errors.length + " JSLint warnings");
 		} else {
-			studio.alert("Congratulation! Your javascript is certified by JSLint.");
+			studio.alert("Congratulation!\nYour javascript is valided by JSLint.");
 		}
 	}
 	/* V2!!!
