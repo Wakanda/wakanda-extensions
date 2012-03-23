@@ -40,11 +40,14 @@ actions.checkError = function checkError() {
 		result;
 	var
 		option;
+	var
+		JSLintErrors;
 
 	studio.currentEditor.clearAnnotations();
 	option = getOptFromPref();
 	fileContent = studio.currentEditor.getContent();
 	result = JSLINT(fileContent, option);
+	JSLintErrors = 0;
 	
 	if (result == false) {
 		var count;
@@ -57,10 +60,20 @@ actions.checkError = function checkError() {
 				var lineNumber = JSLINT.errors[count].line;
 				var errorMsg = JSLINT.errors[count].reason;
 				studio.currentEditor.setAnnotation(lineNumber - 1, errorMsg);
+				JSLintErrors++;
 			}
 		}
 		catch(e) {
 			studio.alert(e.message);
+		}
+	}
+	
+	if (typeof option.wkd_showResultDlg !== 'undefined' && option.wkd_showResultDlg)
+	{
+		if (JSLintErrors !== 0) {
+			studio.alert("There are " + JSLINT.errors.length + " JSLint warnings");
+		} else {
+			studio.alert("Congratulation! Your javascript is certified by JSLint.");
 		}
 	}
 	/* V2!!!
@@ -235,6 +248,12 @@ function getOptFromPref() {
 	if (fragment !== '' && (fragment === 'true' || fragment === 'false'))
 		option.fragment = (fragment === 'true');
 
+
+	// Non-jslint settings
+	var wkd_showResultDlg = studio.extension.getPref('wkd_showResultDlg');
+	if (wkd_showResultDlg !== '' && (wkd_showResultDlg === 'true' || wkd_showResultDlg === 'false'))
+		option.wkd_showResultDlg = (wkd_showResultDlg === 'true');
+	
 	return option;
 }
 
@@ -346,6 +365,11 @@ function writeOptToPref(option) {
 	
 	if (typeof option.fragment !== 'undefined')
 		studio.extension.setPref("fragment", option.fragment);
+		
+	
+	// Non-jslint settings
+	if (typeof option.wkd_showResultDlg !== 'undefined')
+		studio.extension.setPref("wkd_showResultDlg", option.wkd_showResultDlg);
 
 }
 
@@ -376,7 +400,7 @@ actions.doSettings = function doSettings(message) {
 		'factorySettings': factorySettings
 	};
 	
-	studio.extension.showModalDialog("setOptionDialog.html", arguments, {title:"JSLint Settings", dialogwidth:800, dialogheight:540, resizable:false }, 'doSettingsCallBack');
+	studio.extension.showModalDialog("setOptionDialog.html", arguments, {title:"JSLint Settings", dialogwidth:800, dialogheight:560, resizable:false }, 'doSettingsCallBack');
 };
 
 actions.doAbout = function doAbout(message) {
@@ -398,7 +422,5 @@ exports.handleMessage = function handleMessage(message) {
 		return false;
 	}
 	
-	//if (message.event === "fromSender") {
-		actions[actionName](message);
-	//}
+	actions[actionName](message);
 };
