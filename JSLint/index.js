@@ -21,7 +21,7 @@
 * THE SOFTWARE.
 */
 
-include("scripts/jslint.js");
+include("JSLint.com/jslint.js");
 
 var
 	actions;
