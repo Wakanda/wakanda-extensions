@@ -21,12 +21,12 @@
 
 
 
-include("js-beautify/beautify.js");
-include("js-beautify/beautify-html.js");
-include("js-beautify/unpackers/javascriptobfuscator_unpacker.js");
-include("js-beautify/unpackers/urlencode_unpacker.js");
-include("js-beautify/unpackers/p_a_c_k_e_r_unpacker.js");
-include("js-beautify/unpackers/myobfuscate_unpacker.js");
+include("jsbeautifier.org/beautify.js");
+include("jsbeautifier.org/beautify-html.js");
+include("jsbeautifier.org/unpackers/javascriptobfuscator_unpacker.js");
+include("jsbeautifier.org/unpackers/urlencode_unpacker.js");
+include("jsbeautifier.org/unpackers/p_a_c_k_e_r_unpacker.js");
+include("jsbeautifier.org/unpackers/myobfuscate_unpacker.js");
 
 var
 	actions;
