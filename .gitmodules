@@ -1,3 +1,6 @@
 [submodule "JSLint/JSLint.com"]
 	path = JSLint/JSLint.com
 	url = git://github.com/douglascrockford/JSLint.git
+[submodule "Beautifier/jsbeautifier.org"]
+	path = Beautifier/jsbeautifier.org
+	url = git://github.com/einars/js-beautify.git
