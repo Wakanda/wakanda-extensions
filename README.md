@@ -5,6 +5,6 @@ The capacity of Wakanda Studio is extensible thanks to extensions. Here is the e
 
 Please visit our [extension forum](http://forum.wakanda.org/forumdisplay.php?27-Studio-Extensions) if you have any suggestion/question/problem.
 
-An useful [online document] (http://doc.wakanda.org/Wakanda-Studio-Extensions/Wakanda-Studio-Extensions.100-872838.en.html) may help you to make your extension in 2 minutes.
+An useful [online document] (http://doc.wakanda.org/Wakanda-Studio-Extensions/Wakanda-Studio-Extensions.100-872838.en.html) will help you to make your extension in 2 minutes.
 
 Enjoy
