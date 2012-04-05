@@ -19,4 +19,4 @@ Unzip the extension, copy the extension folder into the directory described abov
 
 Question or problem about Wakanda Studio extension? You can get active support from [Wakanda Studio Extensions' Forum](http://forum.wakanda.org/forumdisplay.php?27-Studio-Extensions)
 
-An esy to use [Wakanda Studio Extensions Howto] (http://doc.wakanda.org/Wakanda-Studio-Extensions/Wakanda-Studio-Extensions.100-872838.en.html) may help you to make your extension.
+An easy to use [Wakanda Studio Extensions Howto] (http://doc.wakanda.org/Wakanda-Studio-Extensions/Wakanda-Studio-Extensions.100-872838.en.html) may help you to make your extension.
