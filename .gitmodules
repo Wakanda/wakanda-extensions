@@ -6,4 +6,4 @@
 	url = git://github.com/einars/js-beautify.git
 [submodule "imageTools"]
 	path = imageTools
-	url = git@github.com:gilles-danjou/wakanda-extensions.git/imageTools
+	url = git@github.com:gilles-danjou/wakanda-extensions.git/
