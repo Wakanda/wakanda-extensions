@@ -2,8 +2,8 @@
 	path = JSLint/JSLint.com
 	url = git://github.com/douglascrockford/JSLint.git
 [submodule "Beautifier/jsbeautifier.org"]
-	path = eautifier/jsbeautifier.org
+	path = Beautifier/jsbeautifier.org
 	url = git://github.com/einars/js-beautify.git
 [submodule "imageTools"]
-	path = /imageTools
+	path = 
 	url = git@github.com:gilles-danjou/wakanda-extensions.git/
