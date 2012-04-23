@@ -37,6 +37,10 @@ actions.html_div = function html_div(message) {
 	selectedText = studio.currentEditor.getSelectedText();
 	new_str = html_div_tag.replace("$REPLACE", selectedText);
 	studio.currentEditor.insertText(new_str);
+	if (selectedText === '') {
+		var sel = studio.currentEditor.getSelectionInfo();
+		studio.currentEditor.setCaretPosition(sel.offsetFromStartOfText - 6);
+	}
 };
 
 function li(type) {
@@ -92,6 +96,11 @@ actions.html_p = function html_p(message) {
 	selectedText = studio.currentEditor.getSelectedText();
 	new_str = html_p_tag.replace("$REPLACE", selectedText);
 	studio.currentEditor.insertText(new_str);
+
+	if (selectedText === '') {
+		var sel = studio.currentEditor.getSelectionInfo();
+		studio.currentEditor.setCaretPosition(sel.offsetFromStartOfText - 4);
+	}
 };
 
 /*Javascript*/
@@ -104,10 +113,12 @@ actions.js_func = function js_func(message) {
 		
 	js_func_snippet = "function func() {\n\n}\n";
 	studio.currentEditor.insertText(js_func_snippet);
-	selection = studio.currentEditor.getSelection();
-	selection.firstLineVisible -= 2;
-	selection.lastLineVisible -= 2;
-	studio.currentEditor.selectText(selection);
+	
+	// Set the cursor between the braces
+	sel = studio.currentEditor.getSelectionInfo();
+	studio.currentEditor.selectByVisibleLine(sel.firstLineOffset, sel.lastLineOffset, sel.firstVisibleLine-2, sel.lastVisibleLine-2);
+	
+	// Do 1 indent
 	studio.currentEditor.insertText("\t");
 };
 
@@ -120,21 +131,20 @@ actions.js_if = function js_if(message) {
 	
 	js_if_snippet = "if () {\n\n} else {\n\n}\n";
 	studio.currentEditor.insertText(js_if_snippet);
-	selection = studio.currentEditor.getSelection();
-	selection.firstLineVisible -= 4;
-	selection.lastLineVisible -= 4;
-	studio.currentEditor.selectText(selection);
+	
+	// Set the cursor between the parentheses
+	sel = studio.currentEditor.getSelectionInfo();
+	studio.currentEditor.setCaretPosition(sel.offsetFromStartOfText - js_if_snippet.length + 4);
 };
 
 actions.js_for = function js_for(message) {
 	var
-		selection;
+		sel;
 
 	studio.currentEditor.insertText("for (var i=0; i<x; i++) {\n\n};\n");
-	selection = studio.currentEditor.getSelection();
-	selection.firstLineVisible -= 2;
-	selection.lastLineVisible -= 2;
-	studio.currentEditor.selectText(selection);
+	sel = studio.currentEditor.getSelectionInfo();
+	
+	studio.currentEditor.setCaretPosition(sel.offsetFromStartOfText - 4);
 	studio.currentEditor.insertText("\t");
 };
 
@@ -142,13 +152,13 @@ actions.js_switch = function js_switch(message) {
 	var
 		js_switch_snippet;
 	var
-		condition;
-	//var
-		//new_str;
+		sel;
 		
 	js_switch_snippet = "switch() {\n	case x:\n		break;\n	case y:\n		break;\n}\n";
-	//new_str = js_switch_snippet.replace("$REPLACE", condition);
 	studio.currentEditor.insertText(js_switch_snippet);
+	
+	sel = studio.currentEditor.getSelectionInfo();
+	studio.currentEditor.setCaretPosition(sel.offsetFromStartOfText - js_switch_snippet.length + 7);
 };
 
 actions.js_try = function js_try(message) {
@@ -157,10 +167,8 @@ actions.js_try = function js_try(message) {
 		
 	js_try_snippet = "try {\n\n} catch (e) {\n\n}\n";
 	studio.currentEditor.insertText(js_try_snippet);
-	selection = studio.currentEditor.getSelection();
-	selection.firstLineVisible -= 4;
-	selection.lastLineVisible -= 4;
-	studio.currentEditor.selectText(selection);
+	var sel = studio.currentEditor.getSelectionInfo();
+	studio.currentEditor.setCaretPosition(sel.offsetFromStartOfText - js_try_snippet.length + 6);
 	studio.currentEditor.insertText("\t");
 };
 

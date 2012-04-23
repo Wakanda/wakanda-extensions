@@ -127,16 +127,16 @@ function unpacker_filter(source) {
     } while (found);
 
     if (P_A_C_K_E_R.detect(source)) {
-        source = unpacker_filter(P_A_C_K_E_R.unpack(source))
+        source = unpacker_filter(P_A_C_K_E_R.unpack(source));
     }
     if (Urlencoded.detect(source)) {
-        source = unpacker_filter(Urlencoded.unpack(source))
+        source = unpacker_filter(Urlencoded.unpack(source));
     }
     if (JavascriptObfuscator.detect(source)) {
-        source = unpacker_filter(JavascriptObfuscator.unpack(source))
+        source = unpacker_filter(JavascriptObfuscator.unpack(source));
     }
     if (MyObfuscate.detect(source)) {
-        source = unpacker_filter(MyObfuscate.unpack(source))
+        source = unpacker_filter(MyObfuscate.unpack(source));
     }
 
     return trailing_comments + source;
@@ -222,7 +222,5 @@ exports.handleMessage = function handleMessage(message) {
 		studio.alert("I don't know about this message: " + actionName);
 		return false;
 	}
-	//if (message.event === "fromSender") {
-		actions[actionName](message);
-	//}
+	actions[actionName](message);
 }

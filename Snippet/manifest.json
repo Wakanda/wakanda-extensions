@@ -12,6 +12,7 @@
 						"location": "codeEditorToolbar",
 						"title": "Snippets",
 						"icon": "html.png",
+						"popup": "yes",
 						"menu": [
 							{"actionName": "html_form"},
 							{"actionName": "html_div"},
@@ -27,6 +28,7 @@
 						"location": "codeEditorToolbar", 
 						"icon": "js.png",
 						"title": "Snippets",
+						"popup": "yes",
 						"menu": [
 							{"actionName": "js_func"},
 							{"actionName": "js_if"},
