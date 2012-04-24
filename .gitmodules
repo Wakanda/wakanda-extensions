@@ -6,4 +6,4 @@
 	url = git://github.com/einars/js-beautify.git
 [submodule "imageTools"]
 	path = imageTools
-	url = git@github.com:gilles-danjou/imageTools.git
+	url = git://github.com:gilles-danjou/imageTools.git
