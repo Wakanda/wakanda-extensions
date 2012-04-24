@@ -5,5 +5,5 @@
 	path = Beautifier/jsbeautifier.org
 	url = git://github.com/einars/js-beautify.git
 [submodule "imageTools"]
-	path = imageTools
+	path = Beautifier/imageTools
 	url = git://github.com:gilles-danjou/imageTools.git
