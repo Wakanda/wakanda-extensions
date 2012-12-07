@@ -1,0 +1,42 @@
+{
+	"extension": 
+	{
+		"name": "uglify",
+		"version": "1.0.0",
+		"description": "Wakanda Studio Uglify Extension",
+		"icon": "Uglify.png",
+		
+		"senders": [
+					{
+						"location": "codeEditorToolbar", 
+						"tips": "Uglify : Make your code smaller for faster execution and obfuscation",
+						"actionName": "uglify"
+					},
+					{ 
+						"location": "solutionExplorerTreeViewContextMenu", 
+						"menu":	[{ "actionName": "uglifyFile" }]
+					}
+		],
+		
+		"actions": [
+					{
+						"name": "uglify",
+						"title": "Uglify"
+						"targets":[{ "uti": "com.netscape.javascript-source" }]
+					},
+					{
+						"name": "uglifyFile",
+						"title": "Uglify File",
+						"targets":[{ "uti": "com.netscape.javascript-source" }],
+						"shortcut": {
+							"shortcutKey":"yes",
+							"alternateKey":"yes",
+							"shiftKey":"yes",
+							"key":"u"
+						}
+					}
+		],
+		
+		"lifetime": "application_lifetime"
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"extension": 
+	{
+		"name": "JSMin",
+		"version": "1.0.0",
+		"description": "Wakanda Studio JSMin Extension",
+		"icon": "jsmin.png",
+		
+		"senders": [
+					{ 
+						"location": "codeEditorToolbar", 
+						"tips": "JSMin : Make your code smaller for faster execution and obfuscation",
+						"actionName": "minify"
+					},
+					{ 
+						"location": "solutionExplorerTreeViewContextMenu", 
+						"menu":	[{ "actionName": "minifyFile" }]
+					}
+		],
+		
+		"actions": [
+					{
+						"name": "minify",
+						"title": "JSMin",
+						"targets":[{ "uti": "com.netscape.javascript-source" }]
+					},
+					{
+						"name": "minifyFile",
+						"title": "Minify File",
+						"targets":[{ "uti": "com.netscape.javascript-source" }],
+						"shortcut": {
+							"shortcutKey":"yes",
+							"alternateKey":"yes",
+							"shiftKey":"yes",
+							"key":"i"
+						}
+					}
+		],
+		
+		"lifetime": "application_lifetime"
+	}
+}
