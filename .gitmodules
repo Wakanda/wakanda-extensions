@@ -7,3 +7,6 @@
 [submodule "imageTools"]
 	path = imageTools
 	url = git@github.com:gilles-danjou/imageTools.git
+[submodule "Faker"]
+	path = Faker
+	url = https://github.com/midrissi/faker-wakanda.git
