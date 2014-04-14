@@ -1,0 +1,33 @@
+{
+    "extension": {
+        "name": "Add-ons",
+        "version": "0.1.0",
+        "description": "Download Wakanda Add-ons",
+        "icon": "icon.png",
+        "senders": [
+            {
+                "location": "studioToolbar",
+                "icon": "icon.png",
+                "actionName": "showDialog",
+                "tips": "Download Wakanda Add-ons",
+                    }
+        ],
+        "actions": [
+            {
+                "name": "packaging",
+                "title": "Add-ons",
+                    },
+            {
+                "name": "showDialog",
+                "title": "Add-ons",
+                "shortcut": {
+                    "shortcutKey": "yes",
+                    "alternateKey": "no",
+                    "shiftKey": "yes",
+                    "key": "a"
+                }
+                    }
+        ],
+        "lifetime": "application_lifetime"
+    }
+}

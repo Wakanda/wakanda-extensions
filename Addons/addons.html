@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Wakanda Studion Add-ons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="en" />
+    <link href="addons.css" rel="stylesheet" media="print, screen">
+    <style>
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+    </style>
+</head>
+
+<body class="studio-ext-addons">
+
+    <header>
+        <h1>Wakanda Studio Add-ons</h1>
+        <a href="javascript:studio.extension.quitDialog();" title="Close" class="close">
+            <img src="./img/formClear.gif" /></a>
+        <nav>
+            <ul class="wakRepo">
+                <li id="wakanda-themes">				
+                    <img src="./img/themes.png" />
+                    <a href="#">Themes</a>					<p id="wakanda-themes-items-number">0</p>
+                </li>
+                <li id="wakanda-widgets">				
+                    <img src="./img/widgets.png" />
+                    <a href="#">Widgets</a>                    <p id="wakanda-widgets-items-number">0</p>
+                </li>
+                <li id="wakanda-extensions">				                    <img src="./img/extensions.png" />
+                    <a href="#">Extensions</a>                    <p id="wakanda-extensions-items-number">0</p>
+                </li>
+                <!--
+                A REACTIVER ULTERIEUREMENT
+                <li id="wakandadb-drivers"><a href="#">Drivers</a></li>
+                <li id="wakanda-modules"><a href="#">Modules</a></li>
+                -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>        
+        <form class="search-form">            <span class="addRepo">					        <button onclick='return addCustomRepo();' ></button>&nbsp;							    <p id='addRepo'>Import a theme</p>								<h5 id='ps' style="visibility: hidden; ">Note : You must restart Wakanda Studio / Wakanda Enterprise Studio after installing an extension. </h5>					        </span>
+            <span class="as-searchInput">
+                <img src="./img/browseField.gif" class="magnifyingGlass" />
+                <input id="searchField" type="text" placeholder="Search" />
+                <button class="clear" onclick="clearSearch();" style="visibility: hidden; "></button>
+            </span>
+        </form>
+
+        <div id="selecting" style="visibility: hidden; ">
+            <label for="projectsList">Select a project :</label>
+            <select id="projectsList"></select>
+        </div>
+
+        <ul id="contentList">
+        </ul>
+    </main>
+
+    <footer>
+        <ul class="pagination">
+        </ul>
+    </footer>
+
+    <script src="lib/jquery-2.0.3.min.js"></script>
+
+    <script src="addons.js"></script>
+</body>
+
+</html>

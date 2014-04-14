@@ -1,0 +1,484 @@
+/*
+* This file is part of Wakanda software, licensed by 4D under
+*  (i) the GNU General Public License version 3 (GNU GPL v3), or
+*  (ii) the Affero General Public License version 3 (AGPL v3) or
+*  (iii) a commercial license.
+* This file remains the exclusive property of 4D and/or its licensors
+* and is protected by national and international legislations.
+* In any event, Licensee's compliance with the terms and conditions
+* of the applicable license constitutes a prerequisite to any use of this file.
+* Except as otherwise expressly stated in the applicable license,
+* such license does not include any other license or rights on this file,
+* 4D's and/or its licensors' trademarks and/or other proprietary rights.
+* Consequently, no title, copyright or other proprietary rights
+* other than those specified in the applicable license is granted.
+*/
+
+/** 
+ * Reset CSS
+ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+/**
+ * Main HTML elements
+ */
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100%;
+    font-size: 14px; /* old browsers */
+    font-size: 1.4rem; /* => 14px */
+
+    background-color: #f2f2f2;
+
+    color: #000;
+    font-family: "Myriad Pro", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/**
+ * Addons
+ */
+
+/* Buttons */
+.studio-ext-addons button {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+
+    background-color: #d8d8d8;
+    box-shadow: 0 1px rgba(255, 255, 255, 0.9) inset;
+
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.studio-ext-addons button.infos {
+	width: 17px;
+    height: 17px;
+	background-image: url(./img/btn_info.png);
+	background-color: transparent;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	border:none;
+	box-shadow: none;
+	
+}
+.studio-ext-addons button.license {
+	background-image : url(./img/btn_licence.png);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	width: 45px;
+    height: 27px;
+	border:none;
+}
+.studio-ext-addons h1.license {
+   /* position:relative;
+    bottom:2px;
+	text-align:center;*/
+}
+
+.studio-ext-addons button.reboot,
+.studio-ext-addons button.success {
+    background-image : url(./img/btn_installed.png);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	width: 91px;
+    height: 27px;
+	border:none;
+}
+
+.studio-ext-addons button.update{
+    background-image : url(./img/btn_upgrade.png);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	width: 91px;
+    height: 27px;
+	border:none;
+
+}
+.studio-ext-addons button.install{
+    background-image : url(./img/btn_install.png);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	width: 91px;
+    height: 27px;
+	border:none;
+
+}
+
+.studio-ext-addons button.warning,
+.studio-ext-addons button.error{
+    background-image : url(./img/btn_error.png);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	width: 91px;
+    height: 27px;
+	border:none;
+
+}
+.studio-ext-addons button.progress {
+    background-image : url(./img/btn_spinner.gif);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	width: 91px;
+    height: 27px;
+	border:none;
+}
+.studio-ext-addons button:active {
+    box-shadow: 0 -1px rgba(0, 0, 0, 0.05) inset, 0 -1px rgba(255, 255, 255, 0.4) inset;
+}
+
+/* Header */
+.studio-ext-addons header {
+    background-color: #fff;
+    background-image: url(./img/logo-addon.png);
+    background-repeat: no-repeat;
+    background-position: 2% 10%;
+}
+
+.studio-ext-addons header h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    line-height: 3;
+    padding-left: 7.5rem;
+}
+
+/* Nav */
+.studio-ext-addons nav ul {
+    width: 100%;
+}
+
+.studio-ext-addons nav ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.studio-ext-addons nav li {
+    float: left;
+
+    padding: 0 3.5rem;
+    max-width: 23%;
+
+    font-size: 1.9rem;
+    line-height: 2;
+    text-align: center;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.studio-ext-addons nav li::before {
+    content: ''; 
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.studio-ext-addons nav li a {
+    color: #828282;
+}
+
+.studio-ext-addons nav li.selected {
+    background-color: #f2f2f2;
+}
+
+.studio-ext-addons nav li.selected a {
+    color: #000;
+}
+.studio-ext-addons nav li p {
+
+    display: inline-block;
+	font-size: 12px;
+    font-family: serif;
+	background-image: url(./img/gray_circle.png);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	color: white;
+	margin-left: 7px;
+	height: 23px;
+    width: 22px;
+	position: relative;
+    top: -3px;
+
+}
+
+/* Main */
+.studio-ext-addons main {
+    padding-bottom: 50px;
+}
+.studio-ext-addons main .search-form {
+    padding: 20px 20px 0;
+}
+.studio-ext-addons main .search-form .addRepo  p{
+     display: inline-block;
+	 position: relative;
+     top: 7px;
+	 /*font-family:"Myriad Pro", regular;*/
+	 font-size:18px;
+     color : black;
+}
+.studio-ext-addons main .search-form .addRepo button{
+    width: 22px;
+    height: 22px;
+    background-image: url(./img/btn_+.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 11px;
+}
+.studio-ext-addons main .search-form .addRepo  h5{
+     visibility: hidden; 
+	 position: relative;
+     top: 16px;
+	 font-style: italic;
+     font-weight: normal;
+	 color: #616161;
+}
+
+.studio-ext-addons main .search-form::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.studio-ext-addons main .search-form .as-radio {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #979797;
+}
+
+.studio-ext-addons main .search-form .as-radio .radio {
+    display: block;
+    float: left;
+    vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+}
+
+.studio-ext-addons main .search-form .as-radio .radio input[type="radio"] {
+    border-width: 0;
+    position: absolute;
+    left: -300px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.studio-ext-addons main .search-form .as-radio .radio label {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 2;
+    padding: 5px;
+}
+
+.studio-ext-addons main .search-form .as-radio .radio input[type="radio"]:checked + label {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.studio-ext-addons main .search-form .as-searchInput {
+    float: right;
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #979797;
+	margin-top: -30px;
+	border-color: #D4D4D4;
+}
+
+.studio-ext-addons main .search-form .as-searchInput::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.studio-ext-addons main .search-form .as-searchInput button.clear {
+    float: left;
+    height: 34px;
+    width: 34px;
+
+    background: none;
+    background-image: url(./img/formClear.gif);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: 0;    
+
+    opacity: 0.4;
+}
+.studio-ext-addons main .search-form .as-searchInput button.clear:hover {
+    opacity: 1;
+}
+.studio-ext-addons main .search-form .as-searchInput input[type="text"] {
+    float: left;
+
+    border: 0;
+    padding: 0 12px 0 4px;
+
+    height: 34px;
+
+    font-size: 1.5rem;
+    font-family: inherit;
+}
+.studio-ext-addons main .search-form .as-searchInput input[type="submit"] {
+    float: right;
+    height: 34px;
+    width: 34px;
+
+    background: none;
+    background-image: url(./img/browseField.gif);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: 0;
+}
+.studio-ext-addons main .search-form .magnifyingGlass {
+    float: left;
+    width: 34px;
+    height: 34px;
+}
+
+.studio-ext-addons main ul {
+    width: 100%;
+}
+
+.studio-ext-addons main ul li {
+    padding: 16px 20px 13px 20px;
+}
+
+.studio-ext-addons main ul li + li {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px rgba(255, 255, 255, 0.8) inset;
+}
+
+.studio-ext-addons main ul li::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.studio-ext-addons main ul li h2,
+.studio-ext-addons main ul li p {
+    margin-right: 200px;
+}
+
+.studio-ext-addons main ul li h2 {
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    font-size: 1.9rem;
+}
+
+.studio-ext-addons main ul li h2 small {
+    font-size: 0.75em;
+}
+
+.studio-ext-addons main ul li p {
+    font-weight: 300;
+    font-size: 1.4rem;
+}
+
+.studio-ext-addons main ul li .options {
+    width: 200px;
+    height: 27px;
+    float: right;
+    padding: 0 0 0 20px;
+	
+    
+}
+
+.studio-ext-addons main ul li .options button {
+    height: 100%;
+	font-size:13px;
+	font-family: "Myriad Pro" , Semibold;
+	color: #707070;	
+}
+
+.studio-ext-addons main ul li .options button + button {
+    margin-left: 1px;
+}
+
+.studio-ext-addons footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.studio-ext-addons footer .pagination {
+    display: inline-block;
+    font-size: 1.4rem;
+}
+
+.studio-ext-addons footer .pagination::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.studio-ext-addons footer .pagination li {
+    float: left;
+    display: block;
+}
+
+.studio-ext-addons footer .pagination li a,
+.studio-ext-addons footer .pagination li span {
+    display: block;
+    height: 30px;
+    width: 30px;
+    line-height: 32px;
+}
+
+.studio-ext-addons footer .pagination li a {
+    display: block;
+}
+
+.studio-ext-addons footer .pagination li .current {
+    background-color: rgba(200, 200, 200, 1);
+    border-radius: 3px
+}
+
+.studio-ext-addons footer .pagination li .prev {
+    background: url(./img/paginationPrev.gif) no-repeat 50% 50%;
+}
+
+.studio-ext-addons footer .pagination li .next {
+    background: url(./img/paginationNext.gif) no-repeat 50% 50%;
+}
