@@ -111,18 +111,27 @@ function launchSearch() {
 }
 
 
-function addCustomRepo() {    var parentListID=$('li.selected').attr('id');		var typename=(parentListID.replace('wakanda-', '')).slice(0,-1);	
+function addCustomRepo() {    var parentListID=$('li.selected').attr('id');	var typename=(parentListID.replace('wakanda-', '')).slice(0,-1);	
     var repoURL = studio.prompt('Enter the URL of the ' + typename + ' repository to import:', '');
                
     if (repoURL=='' || repoURL==null || repoURL.trim().length <= 0) {		    return false;	}
-    var params = {};		
-    repoURL=repoURL.replace(/\/$/,'');		    if(repoURL.match(/\.git/g)) { 		    params.githubID = repoURL.substr(repoURL.lastIndexOf('/') + 1, repoURL.indexOf('.git') - repoURL.lastIndexOf('/') - 1);		    } else {		    params.githubID = repoURL.substring(repoURL.lastIndexOf('/') + 1, repoURL.length);            }		    if(!repoURL.match(/github.com/)){		    studio.alert('This is not a valid add-on url.');		    return false;    }		
-    params.name = params.githubID;
-    params.git_url = repoURL.replace('github.com', 'api.github.com/repos');
-    params.git_url = params.git_url.replace(/.git$/g, '');	params.zip_url = repoURL.replace('.git', '') + '/archive/master.zip';
-    params.type = parentListID;
-    studio.extension.storage.setItem('addonParams', escape(JSON.stringify(params)));
-   
+    try {
+
+        var params = {};
+        repoURL=repoURL.replace(/\/$/,'');		        if(repoURL.match(/\.git/g)) { 				params.githubID = repoURL.substr(repoURL.lastIndexOf('/') + 1, repoURL.indexOf('.git') - repoURL.lastIndexOf('/') - 1);				} else {				params.githubID = repoURL.substring(repoURL.lastIndexOf('/') + 1, repoURL.length);        		}		
+        params.name = params.githubID;
+        params.git_url = repoURL.replace('github.com', 'api.github.com/repos');
+        params.git_url = params.git_url.replace(/.git$/g, '');
+
+        params.zip_url = repoURL.replace('.git', '') + '/archive/master.zip';
+
+        params.type = parentListID;
+       
+        studio.extension.storage.setItem('addonParams', escape(JSON.stringify(params)));
+    } catch (e) {
+        studio.alert('This is not a valid add-on url.');
+        return false;
+    }
 
     studio.sendCommand('Addons.downloadExt');
     
@@ -427,7 +436,7 @@ function getHTMLFragment(addon) {
 function getRepoContent(repoName, pageNumber, searchString) {
 
     var i, query, WAM_url, dataObj = {}, addonsCount = 0,
-        itemPerPage = 6;
+        itemPerPage = 7;
 
     if (isNaN(pageNumber) || pageNumber < 1) {
         pageNumber = 1;

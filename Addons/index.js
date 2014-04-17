@@ -405,8 +405,8 @@ actions.showDialog = function showDialog() {
         'addons.html',
         '', {
             title: 'Wakanda Studio',
-            dialogwidth: 900,
-            dialogheight: 825,
+            dialogwidth: 970,
+            dialogheight: 900,
             resizable: false
         },
         '');		 // studio.extension.openPageInTab('./addons.html','Add-ons Extension',false);
